@@ -120,6 +120,21 @@ img {
     align-items: center; /* Centra los elementos verticalmente dentro de la cuadrícula */
 }
 
+button{
+    border-color: black; 
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    background-color: #000080; 
+    color: white; 
+    margin: 0.5rem auto; 
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; 
+    align-items: center; height: 4.5rem; 
+    width: 19rem;
+}
+
+
 @media (min-width: 768px) {
     .contenedor__grid {
         display: grid; /* Activa el diseño de cuadrícula */
@@ -183,3 +198,5 @@ img {
         border-radius: 50%; /* Hace que la imagen sea completamente circular */
     }
 }
+
+

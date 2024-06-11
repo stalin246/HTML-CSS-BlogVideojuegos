@@ -1,137 +1,185 @@
 :root {
-    --azulOscuro: #000080;
-    --azulClaro: #9eb5d9;
-
+    --azulOscuro: #000080; /* Define un color azul oscuro como variable para uso en todo el documento */
+    --azulClaro: #9eb5d9;  /* Define un color azul claro como variable para uso en todo el documento */
 }
 
-/* Configuración base para todos los elementos HTML */
 html {
-    box-sizing: border-box;  /* Cambia el modelo de caja para incluir padding y border en el ancho y alto total */
-    font-size: 62.5%;  /* Establece el tamaño de fuente base a 10px (62.5% de 16px), facilitando el cálculo de rem */
+    box-sizing: border-box;  /* Ajusta el modelo de caja para que el ancho y alto incluyan el padding y el borde */
+    font-size: 62.5%;  /* Establece el tamaño de fuente base a 10px (62.5% de 16px, tamaño predeterminado del navegador) */
 }
+
 *, *:before, *:after {
-    box-sizing: inherit; /* Hace que todos los elementos hereden la propiedad box-sizing del elemento html */
+    box-sizing: inherit; /* Hereda el modelo de caja del elemento raíz, asegurando consistencia en toda la página */
 }
 
 body {
-    font-family: 'Krub', sans-serif;
-    background-image: linear-gradient(to top, #bdaaaa 0%, var(--blanco) 100%);
+    font-family: 'Krub', sans-serif; /* Establece la familia de fuentes principal del cuerpo del documento */
+    background-image: linear-gradient(to top, #bdaaaa 0%, var(--blanco) 100%); /* Crea un gradiente de fondo desde un tono claro a blanco */
 }
 
-
 /* Establecimiento de tamaños específicos para cada nivel de encabezado */
-h1 { font-size: 3.6rem; }
-h2 { font-size: 2.7rem; }
-h3 { font-size: 1.9rem; }
-h4 { font-size: 0.7rem; }
-p  { font-size: 1.5rem;}
-a  {font-size: 2rem;}
+h1 {
+    font-size: 3.6rem; /* Tamaño de fuente para <h1> */
+    color: var(--azulOscuro); /* Color de texto usando la variable azul oscuro */
+}
+h2 {
+    font-size: 2.7rem; /* Tamaño de fuente para <h2> */
+    color: var(--azulOscuro); /* Color de texto usando la variable azul oscuro */
+}
+h3 {
+    font-size: 1.9rem; /* Tamaño de fuente para <h3> */
+    color: var(--azulOscuro); /* Color de texto usando la variable azul oscuro */
+}
+strong {
+    color: var(--azulOscuro); /* Color de texto en negrita usando la variable azul oscuro */
+}
 
-img { 
-    max-width: 100%;
+p {
+    font-size: 1.5rem; /* Tamaño de fuente para <p> */
+}
+a {
+    font-size: 2rem; /* Tamaño de fuente para <a> */
+}
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no sean más grandes que su contenedor */
 }
 
 .titulo__logo {
-    display: block;
-    text-align: center;
-    margin-bottom: 1rem;
+    display: block; /* Establece el elemento como bloque para que ocupe su propia línea */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 1rem; /* Añade un margen inferior de 1rem */
+    color: var(--azulOscuro); /* Color de texto usando la variable azul oscuro */
 }
+
 
 
 @media (min-width: 768px) {
     .titulo__logo {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        gap: 2rem;
+        display: flex; /* Cambia el modo de visualización a flex para mejorar la alineación de los elementos internos */
+        align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+        justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+        gap: 2rem; /* Establece una separación de 2rem entre los elementos dentro del contenedor */
     }
-    
 }
 
 .contenedor {
-    width: min(90%, 120rem); 
-    margin: 0 auto;  /* Centra el contenedor horizontalmente */
+    width: min(90%, 120rem); /* Establece un ancho máximo de 120rem o 90% del ancho del viewport, lo que sea menor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente dentro de su elemento padre */
 }
 
 .navegacion {
-    background-color: #000080;
+    background-color: #000080; /* Establece un fondo azul oscuro para la navegación */
 }
 
 @media (min-width: 768px) {
     .navegacion {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15rem;
-        background-color: var(--azulOscuro);
+        display: flex; /* Usa flexbox para organizar los enlaces de la navegación */
+        justify-content: center; /* Alinea los elementos de la navegación al centro horizontalmente */
+        align-items: center; /* Alinea los elementos de la navegación al centro verticalmente */
+        gap: 15rem; /* Establece una separación de 15rem entre cada elemento de la navegación */
+        background-color: var(--azulOscuro); /* Utiliza la variable CSS para el color de fondo */
     }
-    
 }
 
 .navegacion__enlace {
-    display: block;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    padding: 1rem;
+    display: block; /* Establece el enlace como un bloque para que ocupe toda la línea */
+    text-align: center; /* Centra el texto del enlace */
+    align-items: center; /* Alinea los ítems al centro, aunque no tiene efecto porque no está en un contenedor flex */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: white; /* Establece el color del texto a blanco */
+    padding: 1rem; /* Añade relleno alrededor del texto del enlace */
 }
 
 .navegacion__enlace:hover {
-    background-color: var(--azulClaro);
+    background-color: var(--azulClaro); /* Cambia el fondo a azul claro cuando se pasa el mouse sobre el enlace */
 }
-.articulos__noticia{
 
-    text-align: justify;
-    line-height: 3rem;
+
+.articulos__noticia {
+    text-align: justify; /* Alinea el texto de manera justificada */
+    line-height: 4rem; /* Establece la altura de línea para mejorar la legibilidad del texto */
 }
 
 @media (min-width: 768px) {
-    .articulos__noticia{
-        display: flex;
-        margin: 5rem auto;
-        gap: 2rem;
-        text-align: justify;
-        
-    
+    .articulos__noticia {
+        display: flex; /* Utiliza flexbox para organizar los artículos como elementos flexibles */
+        margin: 5rem auto; /* Centra el artículo horizontalmente con un margen superior e inferior de 5rem */
+        gap: 2rem; /* Espacio de 2rem entre elementos del flexbox */
+        text-align: justify; /* Mantiene el texto justificado incluso en vista más amplia */
     }
-    
 }
 
 .contenedor__grid {
-    text-align: justify;
-    line-height: 2rem;
+    text-align: justify; /* Alinea el texto de manera justificada */
+    line-height: 2.8rem; /* Establece la altura de línea para el contenedor */
+}
+
+.top {
+    display: grid; /* Utiliza el diseño de cuadrícula */
+    align-items: center; /* Centra los elementos verticalmente dentro de la cuadrícula */
 }
 
 @media (min-width: 768px) {
     .contenedor__grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: repeat(10, 1fr);
-        margin: 0 0 0 9rem;
-        column-gap: 2rem;
-        text-align: justify;
+        display: grid; /* Activa el diseño de cuadrícula */
+        grid-template-columns: 1fr 2fr; /* Divide las columnas en fracciones */
+        grid-template-rows: repeat(10, 1fr); /* Define 10 filas de tamaño igual */
+        margin: 0 0 0 20rem; /* Ajusta los márgenes, especialmente el izquierdo a 20rem */
+        column-gap: 2rem; /* Espacio de 2rem entre las columnas */
+        text-align: justify; /* Mantiene el texto justificado */
     }
-    
     .top {
-        margin: 2rem auto;
+        margin: 2rem auto; /* Centra el contenedor top horizontalmente con un margen superior e inferior de 2rem */
     }
-    
 }
 
-
-.footer{
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--azulOscuro);
-    color: white;
-    max-width: 100%;
+.footer {
+    text-align: center; /* Centra el texto del pie de página */
+    padding: 2rem; /* Añade un relleno de 2rem */
+    background-color: var(--azulOscuro); /* Color de fondo usando la variable CSS */
+    color: white; /* Color de texto blanco */
+    max-width: 100%; /* Asegura que el pie de página no exceda el ancho del viewport */
 }
 
-.iconos{
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    color: white;
-    margin-bottom: 1.3rem;
+.iconos {
+    display: flex; /* Utiliza flexbox para organizar los iconos */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    gap: 4rem; /* Espacio de 4rem entre los iconos */
+    color: white; /* Color de los iconos en blanco */
+    margin-bottom: 1.3rem; /* Margen inferior de 1.3rem */
+}
+
+.perfil {
+    text-align: center; /* Centra el contenido del perfil */
+}
+
+.perfil__imagen {
+    max-width: 40%; /* Limita el ancho máximo de la imagen del perfil al 40% */
+    border-radius: 50rem; /* Hace que la imagen sea circular */
+}
+
+#texto__sobremi {
+    line-height: 4rem; /* Establece la altura de línea para mejorar la legibilidad */
+    text-align: justify; /* Alinea el texto de manera justificada */
+}
+
+@media (min-width: 768px) {
+    .contenedor__sobremi {
+        display: grid; /* Usa el diseño de cuadrícula */
+        column-gap: 1.1rem; /* Espacio entre columnas de 1.1rem */
+        margin-top: 5rem; /* Margen superior de 5rem */
+        margin-bottom: 4rem; /* Margen inferior de 4rem */
+        grid-template-columns: 0.8fr 3fr; /* Proporción de columnas en la cuadrícula */
+        grid-template-rows: repeat(2, 1fr); /* Define dos filas de tamaño igual */
+        align-items: center; /* Alineación vertical de los elementos */
+    }
+    .tercero {
+        grid-column: 1/3; /* Hace que el elemento ocupe las dos columnas */
+    }
+    .perfil__imagen {
+        max-width: 100%; /* Aumenta el tamaño máximo de la imagen al 100% */
+        align-items: center; /* Alinea el contenido verticalmente */
+        border-radius: 50%; /* Hace que la imagen sea completamente circular */
+    }
 }
